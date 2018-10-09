@@ -1,0 +1,21 @@
+{
+  "name": "@page/vuejs-101-tutorial",
+  "description": "vuejs 101 tutorial",
+  "version": "1.0.0",
+  "config": {
+    "application": true,
+    "appType": "vue"
+  },
+  "dependencies": {
+    "@component/account-vue": "git+https://code.devops.fds.com/polaris/component/account-vue.git#FEATURE/E-10240-initial-commit",
+    "@component/nprogress": "git+https://code.devops.fds.com/polaris/component/nprogress.git#FEATURE/E-10240-initial",
+    "@component/observer-vue": "git+https://code.devops.fds.com/polaris/component/observer-vue.git#FEATURE/E-10240-initial",
+    "@component/slideout-vue": "git+https://code.devops.fds.com/polaris/component/slideout-vue.git#FEATURE/E-10240-initial",
+    "@core/server-vue": "git+https://code.devops.fds.com/polaris/core/server-vue.git#FEATURE/E-10240-initial",
+    "@core/util": "^1.7.0",
+    "vue-no-ssr": "^1.0.0"
+  },
+  "devDependencies": {
+    "@core/dev-server-vue": "git+https://code.devops.fds.com/polaris/core/dev-server-vue.git#FEATURE/E-10240-initial"
+  }
+}

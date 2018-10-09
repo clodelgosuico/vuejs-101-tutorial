@@ -1,0 +1,58 @@
+/**
+ * This file includes the variable and mixins necessary to use foundation.
+ * It should be imported before any foundation base or feature components are included.
+ *
+ * The typical CSS flow for a page should look like this:
+ *
+ * 1. Import CSG settings, which should be all-inclusive (settings for all foundation components, used and unused).
+ * 2. Add custom project-specific global/base settings, overriding the default values provided by CSG.
+ * 3. Import foundation. This makes all mixins and variables available without actually adding any CSS to the page.
+ *    It will use the settings defined in the previous steps for configuring how the foundation CSS behaves.
+ *
+ * The above happens by importing this base file. It need to happen in every scope where foundation CSS is used.
+ * The top-level application file should also include the minimal global CSS required site-wide, as well as any
+ * project-specific site-wide css. Your main app CSS should look something like this:
+ *
+ *                        // this file
+ *                        @import 'base';
+ *
+ *                        // global base css (i.e. typography, flexbox) @TODO doesn't exist yet. @see app.uve
+ *                        @import '~@core/style-guide/minimal';
+ *
+ *                        // project-specific global foundation components
+ *                        @include foundation-forms;
+ *                        @include foundation-menu;
+ *                        @include foundation-menu-icon;
+ *
+ * The above should only happen once in the entire application, to avoid global CSS from being included multiple times.
+ *
+ * The base settings and mixins also need to be included in other scopes that are using a specific foundation
+ * component. For example, imagine a header component that wants to use foundation top bar. It should follow the same base
+ * setup to make all variables and mixins available. It then sets project-specific topbar variables before including
+ * the topbar foundation component CSS:
+ *
+ *                        // this file
+ *                        @import 'base';
+ *
+ *                        // project-specific topbar settings
+ *                        $topbar-background: $super-light-gray;
+ *                        $topbar-unstack-breakpoint: small;
+ *
+ *                        // includes the foundation topbar CSS classes using the settings provided above
+ *                        @include foundation-top-bar;
+ *
+ * Note that the goal should be to only include foundation component CSS once in an application, to avoid loading the
+ * same CSS multiple times.
+ */
+/**
+ * 1. Import CSG settings, which should be all-inclusive (settings for all foundation components, used and unused).
+ */
+@import '~@core/style-guide/src/scss/mcom/settings/settings-mcom';
+/**
+ * 2. Add custom project-specific global/base settings, overriding the default values provided by CSG.
+ */
+/**
+ * 3. Import foundation. This makes all mixins and variables available without actually adding any CSS to the page.
+ *    It will use the settings defined in the previous steps for configuring how the foundation CSS behaves.
+ */
+@import '~@core/vendor/scss/foundation-6.4.4-rc1/scss/foundation';
